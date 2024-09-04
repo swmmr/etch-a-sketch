@@ -8,6 +8,15 @@ function createGrid(size) {
         div.classList.add("grid-item");
         div.style.width = `${640 / size}px`;
         div.style.height = `${640 / size}px`;
+        
+        let currOpacity = 0;
+
+        div.addEventListener("mouseover", () => {
+            if (currOpacity < 1) {
+                currOpacity += 0.1;
+            }
+            div.style.backgroundColor = `rgba(0, 0, 0, ${currOpacity})`;
+        })
         container.appendChild(div);
     }
 }
